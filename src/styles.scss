@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/* Customize bootstrap them */
+$primary-app: #3399ff;
+$secondary-app: #ccccff;
+$success-app: #00e68a;
+$info-app: #17a2b8;
+$warning-app: #ff9999;
+$danger-app: #ff99ff;
+$light-app: #f8f9fa;
+$dark-app: #343a40;
+
+$theme-colors: (
+  "primary": $primary-app,
+  "secondary": $secondary-app,
+  "success": $success-app,
+  "info": $info-app,
+  "warning": $warning-app,
+  "danger": $danger-app,
+  "light": $light-app,
+  "dark": $dark-app,
+);
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
