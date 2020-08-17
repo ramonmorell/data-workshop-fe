@@ -15,6 +15,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { LocationSelectComponent } from './location-select/location-select.component';
 import { UserComponent } from './user/user.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -45,6 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
     }
     }),
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

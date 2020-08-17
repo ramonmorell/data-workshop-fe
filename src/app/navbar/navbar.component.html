@@ -2,15 +2,19 @@
   <div class="row">
     <div class="col-10">
       <ul ngbNav [activeId]="route.url" class="nav-tabs">
-        <li class="navbar-list--options" [ngbNavItem]="link.component" *ngFor="let link of links">
-          <a ngbNavLink [routerLink]="link.component">{{
-            link.title | translate
+        <li
+          class="navbar-list--options"
+          [ngbNavItem]="menuItem.url"
+          *ngFor="let menuItem of menuItems"
+        >
+          <a ngbNavLink [routerLink]="menuItem.url">{{
+            menuItem.title | translate
           }}</a>
         </li>
-        <li class="navbar-list--options ml-auto" [ngbNavItem]="user.component">
-          <a ngbNavLink [routerLink]="user.component">{{
-            user.title | translate
-          }}</a>
+        <li class="navbar-list--options--user" [ngbNavItem]="user.url">
+          <a ngbNavLink [routerLink]="user.url">
+            <fa-icon class="icon-user" [icon]="iconUser"></fa-icon
+          ></a>
         </li>
       </ul>
     </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { MenuItems } from '../constants/navBar';
+import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -10,20 +12,14 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit {
   constructor(public route: Router, public translate: TranslateService) {}
 
-  links = [
-    { title: 'HOME.HOME', component: '/' },
-    { title: 'SEARCH.SEARCH', component: '/search' },
-    { title: 'WORKSHOP.WORKSHOP', component: '/workshop' },
-  ];
-  user = {
-    title: 'USER.USER', component: '/user'
-  }
+  menuItems = MenuItems;
 
-  model = {
-    left: true,
-    middle: false,
-    right: false,
+  user = {
+    title: 'USER.USER',
+    url: '/user',
   };
+
+  iconUser = faUserCircle;
 
   ngOnInit(): void {}
 }

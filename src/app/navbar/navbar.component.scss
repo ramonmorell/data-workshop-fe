@@ -3,9 +3,15 @@
     .navbar-list--options {
         font-weight: 600;
     }
+    .navbar-list--options--user {
+        margin-left: auto !important;
+    }
 
     @media (max-width: 576px) {
         font-size: 0.6em;
+        // .navbar-list--options--user {
+        //     margin-left: unset !important;
+        // }
     }
 }
 
