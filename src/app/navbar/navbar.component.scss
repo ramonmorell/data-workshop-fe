@@ -1,0 +1,12 @@
+
+.navbar-root {
+    .navbar-list--options {
+        font-weight: 600;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 0.6em;
+    }
+}
+
+

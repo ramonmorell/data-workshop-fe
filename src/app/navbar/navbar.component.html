@@ -1,5 +1,21 @@
-<ul ngbNav [activeId]="route.url" class="nav-tabs">
-  <li [ngbNavItem]="link.component" *ngFor="let link of links">
-    <a ngbNavLink [routerLink]="link.component">{{ link.title }}</a>
-  </li>
-</ul>
+<div class="container-fluid navbar-root">
+  <div class="row">
+    <div class="col-10">
+      <ul ngbNav [activeId]="route.url" class="nav-tabs">
+        <li class="navbar-list--options" [ngbNavItem]="link.component" *ngFor="let link of links">
+          <a ngbNavLink [routerLink]="link.component">{{
+            link.title | translate
+          }}</a>
+        </li>
+        <li class="navbar-list--options ml-auto" [ngbNavItem]="user.component">
+          <a ngbNavLink [routerLink]="user.component">{{
+            user.title | translate
+          }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-2">
+      <app-location-select></app-location-select>
+    </div>
+  </div>
+</div>
