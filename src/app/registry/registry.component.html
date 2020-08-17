@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="userName">{{ "REGISTRY.USERNAME" | translate }}</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          aria-describedby="userNameHelp"
+          placeholder="{{ 'REGISTRY.USERNAME_PLACEHOLDER' | translate }}"
+        />
+        <small id="userNameHelp" class="form-text text-muted">
+          {{ "REGISTRY.USERNAME_HELP" | translate }}
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="userCountry">{{
+          "REGISTRY.USERCOUNTRY" | translate
+        }}</label>
+        <select id="userCountry" class="form-control">
+          <option> {{ "REGISTRY.USERCOUNTRY_PLACEHOLDER" | translate }}</option>
+          <option *ngFor="let country of countries">{{
+            translate.currentLang === "es" ? country.name_es : country.name_en
+          }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="userEmail">{{ "REGISTRY.USEREMAIL" | translate }}</label>
+        <input
+          type="email"
+          class="form-control"
+          id="userEmail"
+          aria-describedby="userEmailHelp"
+          placeholder="{{ 'REGISTRY.USEREMAIL_PLACEHOLDER' | translate }}"
+        />
+        <small id="userEmailHelp" class="form-text text-muted">
+          {{ "REGISTRY.USEREMAIL_HELP" | translate }}
+        </small>
+      </div>
+      <div class="form-group">
+        <label for="userPassword">{{ "REGISTRY.PASSWORD" | translate }}</label>
+        <input
+          type="password"
+          class="form-control"
+          id="userPassword"
+          placeholder="{{ 'REGISTRY.USERPASSWORD_PLACEHOLDER' | translate }}"
+        />
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex">
+          <button type="submit" class="btn btn-primary">
+            {{ "REGISTRY.ENTER" | translate }}
+          </button>
+          <button type="reset" class="btn btn-danger ml-auto">
+            {{ "REGISTRY.RESET" | translate }}
+          </button>
+        </div>
+      </div>
+      <br />
+    </form>
+  </div>
+</div>

@@ -10,12 +10,14 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { WorkshopComponent } from './workshop/workshop.component';
-import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LocationSelectComponent } from './location-select/location-select.component';
 import { UserComponent } from './user/user.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './login/login.component';
+import { RegistryComponent } from './registry/registry.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -31,6 +33,8 @@ export function createTranslateLoader(http: HttpClient) {
     WorkshopComponent,
     LocationSelectComponent,
     UserComponent,
+    LoginComponent,
+    RegistryComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +47,8 @@ export function createTranslateLoader(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [HttpClient]
-    }
+        deps: [HttpClient],
+      },
     }),
     FontAwesomeModule,
   ],
