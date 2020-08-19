@@ -1,6 +1,6 @@
 <div class="card">
   <div class="container">
-    <form>
+    <form [formGroup]="registryForm" (ngSubmit)="submit($event)">
       <div class="form-group">
         <label for="userName">{{ "REGISTRY.USERNAME" | translate }}</label>
         <input
@@ -9,6 +9,7 @@
           id="userName"
           aria-describedby="userNameHelp"
           placeholder="{{ 'REGISTRY.USERNAME_PLACEHOLDER' | translate }}"
+          formControlName="userName"
         />
         <small id="userNameHelp" class="form-text text-muted">
           {{ "REGISTRY.USERNAME_HELP" | translate }}
@@ -18,11 +19,21 @@
         <label for="userCountry">{{
           "REGISTRY.USERCOUNTRY" | translate
         }}</label>
-        <select id="userCountry" class="form-control">
-          <option> {{ "REGISTRY.USERCOUNTRY_PLACEHOLDER" | translate }}</option>
-          <option *ngFor="let country of countries">{{
-            translate.currentLang === "es" ? country.name_es : country.name_en
-          }}</option>
+        <select
+          id="userCountry"
+          class="form-control"
+          formControlName="userCountry"
+        >
+          <option value="0">
+            {{ "REGISTRY.USERCOUNTRY_PLACEHOLDER" | translate }}</option
+          >
+          <option
+            *ngFor="let country of countries"
+            value="{{ country.code }}"
+            >{{
+              translate.currentLang === "es" ? country.name_es : country.name_en
+            }}</option
+          >
         </select>
       </div>
       <div class="form-group">
@@ -33,7 +44,17 @@
           id="userEmail"
           aria-describedby="userEmailHelp"
           placeholder="{{ 'REGISTRY.USEREMAIL_PLACEHOLDER' | translate }}"
+          formControlName="userEmail"
         />
+        <ngb-alert
+          [dismissible]="false"
+          *ngIf="
+            registryForm.get('userEmail').errors &&
+            registryForm.get('userEmail').touched
+          "
+        >
+          {{ "REGISTRY.USERNAME_ERROR_EMAIL" | translate }}
+        </ngb-alert>
         <small id="userEmailHelp" class="form-text text-muted">
           {{ "REGISTRY.USEREMAIL_HELP" | translate }}
         </small>
@@ -45,14 +66,23 @@
           class="form-control"
           id="userPassword"
           placeholder="{{ 'REGISTRY.USERPASSWORD_PLACEHOLDER' | translate }}"
+          formControlName="userPassword"
         />
       </div>
       <div class="row">
         <div class="col-12 d-flex">
-          <button type="submit" class="btn btn-primary">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="registryForm.invalid"
+          >
             {{ "REGISTRY.ENTER" | translate }}
           </button>
-          <button type="reset" class="btn btn-danger ml-auto">
+          <button
+            type="reset"
+            class="btn btn-danger ml-auto"
+            [disabled]="!registryForm.touched"
+          >
             {{ "REGISTRY.RESET" | translate }}
           </button>
         </div>

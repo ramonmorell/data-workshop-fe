@@ -15,15 +15,15 @@
         "USERNAME": "User name",
         "USERNAME_PLACEHOLDER": "Enter user name ...",
         "USERNAME_HELP": "Enter you user name to use in the app",
-        "USERCOUNTRY": "Select you country",
+        "USERCOUNTRY": "Country",
         "USERCOUNTRY_PLACEHOLDER" : "Select you country ...",
         "USEREMAIL":"Email",
         "USEREMAIL_PLACEHOLDER": "Enter you email",
         "USEREMAIL_HELP":"Enter you email, We'll never share your email with anyone else",
         "PASSWORD" : "Password",
         "USERPASSWORD_PLACEHOLDER": "Enter you password",
-        "ENTER": " Enter",
-        "RESET": "Reset"
-
+        "ENTER": "Enter",
+        "RESET": "Reset",
+        "USERNAME_ERROR_EMAIL": "Wrong format"
     }
 }

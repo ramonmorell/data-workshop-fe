@@ -10,5 +10,20 @@
     },
     "USER": {
         "USER": "Usuario"
+    },
+    "REGISTRY":{
+        "USERNAME": "Nombre de usuario",
+        "USERNAME_PLACEHOLDER": "Introduce nombre de usuario ...",
+        "USERNAME_HELP": "Introduce nombre de usuario para usar en la aplicación",
+        "USERCOUNTRY": "País",
+        "USERCOUNTRY_PLACEHOLDER" : "Selecciona tu país ...",
+        "USEREMAIL":"Email",
+        "USEREMAIL_PLACEHOLDER": "Introduce tu email",
+        "USEREMAIL_HELP":"Introduce tu email, nunca compartiremos tu email con otros",
+        "PASSWORD" : "Clave",
+        "USERPASSWORD_PLACEHOLDER": "Introduce clave",
+        "ENTER": "Enviar",
+        "RESET": "Limpiar",
+        "USERNAME_ERROR_EMAIL": "Formato incorrecto"
     }
 }

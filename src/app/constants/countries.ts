@@ -1206,12 +1206,6 @@ export const Countries = [
     code: 'ES',
   },
   {
-    name_en: 'Spain',
-    name_es: 'España',
-    dial_code: '+34',
-    code: 'ES',
-  },
-  {
     name_en: 'Sri Lanka',
     name_es: 'Sri Lanka',
     dial_code: '+94',
