@@ -1,29 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { MenuItems } from '../constants/navBar';
+import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(public route: Router, public translate: TranslateService) {}
 
-  constructor(public route: Router) { }
+  menuItems = MenuItems;
 
-  links = [
-    { title: 'Home', component: '/' },
-    { title: 'Search', component: '/search' },
-    { title: 'WorkShop', component: '/workshop' }
-  ];
-
-  model = {
-    left: true,
-    middle: false,
-    right: false
+  user = {
+    title: 'USER.USER',
+    url: '/user',
   };
 
-  ngOnInit(): void {
-    console.log(this.route);
-  }
+  iconUser = faUserCircle;
 
+  ngOnInit(): void {}
 }

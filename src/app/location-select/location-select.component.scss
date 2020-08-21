@@ -1,0 +1,7 @@
+.location-select-root {
+  @media (max-width: 576px) {
+    select {
+      font-size: 1em;
+    }
+  }
+}

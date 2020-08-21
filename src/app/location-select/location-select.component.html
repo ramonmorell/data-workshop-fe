@@ -1,0 +1,14 @@
+<div class="location-select-root">
+  <select
+    class="custom-select"
+    #langSelect
+    (change)="translate.use(langSelect.value)"
+  >
+    <option
+      *ngFor="let lang of translate.getLangs()"
+      [value]="lang"
+      [selected]="lang === translate.currentLang"
+      >{{ languages[lang] }}</option
+    >
+  </select>
+</div>
