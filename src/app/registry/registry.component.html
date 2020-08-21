@@ -81,7 +81,7 @@
           <button
             type="reset"
             class="btn btn-danger ml-auto"
-            [disabled]="!registryForm.touched"
+            [disabled]="registryForm.pristine"
           >
             {{ "REGISTRY.RESET" | translate }}
           </button>
