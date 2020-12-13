@@ -9,7 +9,9 @@
         "WORKSHOP": "Workshop"
     },
     "USER": {
-        "USER": "User"
+        "USER": "User",
+        "REGIST": "I dont have user, gign in",
+        "LOG_IN": "Log in"
     },
     "REGISTRY":{
         "USERNAME": "User name",
@@ -24,6 +26,8 @@
         "USERPASSWORD_PLACEHOLDER": "Enter you password",
         "ENTER": "Enter",
         "RESET": "Reset",
-        "USERNAME_ERROR_EMAIL": "Wrong format"
+        "USERNAME_ERROR_EMAIL": "Wrong format",
+        "USER_REGISTERED": "User registered succesfully",
+        "USER_LOGED": "User autheticated"
     }
 }

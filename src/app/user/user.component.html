@@ -1,11 +1,13 @@
 <div class="container">
   <br />
   <div class="row justify-content-md-center">
-    <!-- <div class="col-md-8">
+    <div *ngIf="showLogin" class="col-md-8">
       <app-login></app-login>
-    </div> -->
-    <div class="col-md-8 col-lg-6">
+      <a *ngIf="showLogin" href="" (click)="handleClickRegistry($event)">{{ "USER.REGIST" | translate }}</a>
+    </div>
+    <div  *ngIf="showRegistry" class="col-md-8 col-lg-6">
       <app-registry></app-registry>
+      <a *ngIf="showRegistry" href="" (click)="handleClickLogin($event)">{{ "USER.LOG_IN" | translate }}</a>
     </div>
   </div>
 </div>

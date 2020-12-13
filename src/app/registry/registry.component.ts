@@ -3,6 +3,8 @@ import { Countries } from '../constants/countries';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ICountry } from '../interfaces';
+import { RegistryService } from './registry.service';
+
 
 @Component({
   selector: 'app-registry',
@@ -14,7 +16,8 @@ export class RegistryComponent implements OnInit {
   registryForm: FormGroup;
   constructor(
     public translate: TranslateService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private registryService: RegistryService
   ) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       if (event.lang === 'es') {
@@ -34,6 +37,8 @@ export class RegistryComponent implements OnInit {
     });
   }
 
+  showForm = true;
+
   buildForm = () => {
     this.registryForm = this.formBuilder.group({
       userName: ['', [Validators.required], []],
@@ -46,12 +51,15 @@ export class RegistryComponent implements OnInit {
   submit = (event: Event) => {
     event.preventDefault();
     const values = this.registryForm.value;
-    console.log(values);
-    console.log(event);
     if (this.registryForm.valid) {
-      console.log('Valid');
+      this.registryService.addUser(values).subscribe((response) => {
+        console.log(response);
+        this.showForm = false;
+      }, (err) => {
+        console.log(err);
+      })
     }
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

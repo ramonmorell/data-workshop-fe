@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "data-workshop-fe"
+    }
+  },
+  "defaultProject": "data-workshop-fe",
+  "cli": {
+    "analytics": false
+  }
 }

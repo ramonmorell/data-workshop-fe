@@ -1,6 +1,6 @@
 <div class="card">
   <div class="container">
-    <form [formGroup]="registryForm" (ngSubmit)="submit($event)">
+    <form *ngIf="showForm" [formGroup]="registryForm" (ngSubmit)="submit($event)">
       <div class="form-group">
         <label for="userName">{{ "REGISTRY.USERNAME" | translate }}</label>
         <input
@@ -89,5 +89,8 @@
       </div>
       <br />
     </form>
+    <div *ngIf="!showForm">
+      <p>   {{ "REGISTRY.USER_REGISTERED" | translate }} </p>
+    </div>
   </div>
 </div>

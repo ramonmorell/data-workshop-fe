@@ -9,7 +9,9 @@
         "WORKSHOP": "Taller"
     },
     "USER": {
-        "USER": "Usuario"
+        "USER": "Usuario",
+        "REGIST": "No tengo usuario, registrarse",
+        "LOG_IN": "Entrar"
     },
     "REGISTRY":{
         "USERNAME": "Nombre de usuario",
@@ -24,6 +26,8 @@
         "USERPASSWORD_PLACEHOLDER": "Introduce clave",
         "ENTER": "Enviar",
         "RESET": "Limpiar",
-        "USERNAME_ERROR_EMAIL": "Formato incorrecto"
+        "USERNAME_ERROR_EMAIL": "Formato incorrecto",
+        "USER_REGISTERED": "Usuario registrado con éxito",
+        "USER_LOGED": "Usuario autenticado"
     }
 }
